@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             amountMaskedTextBox = new MaskedTextBox();
             label1 = new Label();
@@ -184,10 +185,11 @@
             Controls.Add(label1);
             Controls.Add(amountMaskedTextBox);
             Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "RandomNumberGenerator by 8BitHero";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

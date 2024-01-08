@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEAIABoBAAAJgAAABkZAAABACAAWwEAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAz/8gAMv/QADL/0AAy/9AAMv/QADL/0AAy/9AAMv/QADL
+        /0AAy/9AAMv/QADP/yAAAAAAAAAAAAAAAAAAz/8wAMz/8ADM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8AzP//AMz//wDM//8AzP/wAM//MAAAAAAAAAAAAMz/oADM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8AzP//AMz//wDM//8AzP//AMz//wDM/6AAAAAAAAAAAADL/8AAzP//AMz//wDN/38Ay/9PAMz//wDM
+        //8AzP//AMz//wDM//8AzP//AMz//wDM//8Ay//AAAAAAAAAAAAAy//AAMz//wDM//8AzP9QAM//EADM
+        //8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMv/wAAAAAAAAAAAAMv/wADM//8AzP//AMz//wDM
+        //8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDL/8AAAAAAAAAAAADL/8AAzP//AMz//wDM
+        //8AzP//AMz//wDM/1AAzP9QAMz//wDM//8AzP//AMz//wDM//8Ay//AAAAAAAAAAAAAy//AAMz//wDM
+        //8AzP//AMz//wDM//8Az/8wAM//MADM//8AzP//AMz//wDM//8AzP//AMv/wAAAAAAAAAAAAMv/wADM
+        //8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDL/8AAAAAAAAAAAADL
+        /8AAzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDP/yAAzP9QAMz//wDM//8Ay//AAAAAAAAA
+        AAAAy//AAMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8Ay/9AAMv/gADM//8AzP//AMv/wAAA
+        AAAAAAAAAMz/sADM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        /7AAAAAAAAAAAADL/0AAzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8Ay/9AAAAAAAAAAAAAAAAAAM//IADM/28Azf9/AM3/fwDN/38Azf9/AM3/fwDN/38Azf9/AM3/fwDM
+        /28Az/8gAAAAAAAAAAAAAAAAAAAAAADP/zAAzP//AMz//wDM//8AzP//AMv/wADM/5AAzP/wAMz//wDM
+        //8AzP//AM//MAAAAAAAAAAAAAAAAAAAAAAAAAAAAM//IADO/z8Azv8/AM7/PwDO/z8Azv8/AM7/PwDO
+        /z8Azv8/AM//IAAAAAAAAAAAAAAAAP//AADAAwAAgAEAAIwBAACMAQAAgAEAAIGBAACBgQAAgAEAAIAx
+        AACAIQAAgAEAAMADAAD//wAA4AcAAP//AACJUE5HDQoaCgAAAA1JSERSAAAAGQAAABkIBgAAAMTphWMA
+        AAAEZ0FNQQAAsY8L/GEFAAABEklEQVRIS8WV6xGCMBCErwRLoBRLoCMtwU4oQf+jox1ACXaAl7Azl8cR
+        j4e4M9+I3N4SEgL0Fw1POgx3aphhAQ33V4iaFhtfSaPQ0o058/GFeUc18TwRpcvfhWUkBbl+l4O/uXgk
+        NXONRjYf118jMpYrBMYtyC/EJ6fXYgm8fogWqcaVIFqkmQz0WOjKHyd1RItSgwl+nNFOeLSjOkqi1GCk
+        C+6kS2qbXaQIokWaSaHHtGTzr4FokWbK4Gnx3nF6dE+ADw6lmTJ2uYhb3Aed/K9ej0C0SDOtBdEixVTc
+        aBYQLcpMXzaaBbSLFFNxo1lAtEgzrQXRIj65y6t+249WS0dEx+Ji7UaQNcxh7Nc/v78T0QceGMP3DbN5
+        TgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
