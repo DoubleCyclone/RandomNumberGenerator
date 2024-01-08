@@ -75,7 +75,7 @@
             amountMaskedTextBox.ForeColor = SystemColors.Control;
             amountMaskedTextBox.HidePromptOnLeave = true;
             amountMaskedTextBox.Location = new Point(274, 19);
-            amountMaskedTextBox.Mask = "00000";
+            amountMaskedTextBox.Mask = "0000";
             amountMaskedTextBox.Name = "amountMaskedTextBox";
             amountMaskedTextBox.PromptChar = ' ';
             amountMaskedTextBox.Size = new Size(33, 23);
@@ -83,6 +83,7 @@
             amountMaskedTextBox.Text = "2";
             amountMaskedTextBox.ValidatingType = typeof(int);
             amountMaskedTextBox.TextChanged += amountMaskedTextBox_TextChanged;
+            amountMaskedTextBox.Leave += amountMaskedTextBox_Leave;
             // 
             // panel2
             // 
@@ -111,6 +112,7 @@
             upperLimitMaskedTextBox.Text = "100";
             upperLimitMaskedTextBox.ValidatingType = typeof(int);
             upperLimitMaskedTextBox.TextChanged += upperLimitMaskedTextBox_TextChanged;
+            upperLimitMaskedTextBox.Leave += upperLimitMaskedTextBox_Leave;
             // 
             // label3
             // 
@@ -149,6 +151,7 @@
             lowerLimitMaskedTextBox.Text = "1";
             lowerLimitMaskedTextBox.ValidatingType = typeof(int);
             lowerLimitMaskedTextBox.TextChanged += lowerLimitMaskedTextBox_TextChanged;
+            lowerLimitMaskedTextBox.Leave += lowerLimitMaskedTextBox_Leave;
             // 
             // panel3
             // 

@@ -89,7 +89,7 @@ namespace RandomNumberGenerator
             response.EnsureSuccessStatusCode();
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
-            MessageBox.Show($"{jsonResponse}\n","Generated Numbers",MessageBoxButtons.OK);
+            MessageBox.Show($"{jsonResponse}\n", "Generated Numbers", MessageBoxButtons.OK);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -107,7 +107,6 @@ namespace RandomNumberGenerator
             {
                 amount = Convert.ToInt32(amountMaskedTextBox.Text);
             }
-            failSafe();
         }
 
         private void lowerLimitMaskedTextBox_TextChanged(object sender, EventArgs e)
@@ -116,7 +115,6 @@ namespace RandomNumberGenerator
             {
                 min = Convert.ToInt32(lowerLimitMaskedTextBox.Text);
             }
-            failSafe();
         }
 
         private void upperLimitMaskedTextBox_TextChanged(object sender, EventArgs e)
@@ -125,22 +123,52 @@ namespace RandomNumberGenerator
             {
                 max = Math.Max(min + 1, Convert.ToInt32(upperLimitMaskedTextBox.Text));
             }
-            failSafe();
         }
 
-        private void failSafe()
+        private void amountMaskedTextBox_Leave(object sender, EventArgs e)
         {
             if (amountMaskedTextBox.Text == String.Empty || Convert.ToInt32(amountMaskedTextBox.Text) < 1)
             {
                 amount = 1;
+                amountMaskedTextBox.Text = amount.ToString();
             }
+        }
+        private void lowerLimitMaskedTextBox_Leave(object sender, EventArgs e)
+        {
             if (lowerLimitMaskedTextBox.Text == String.Empty)
             {
                 min = 0;
+                lowerLimitMaskedTextBox.Text = min.ToString();
             }
-            if (upperLimitMaskedTextBox.Text == String.Empty || Convert.ToInt32(upperLimitMaskedTextBox.Text) < Convert.ToInt32(lowerLimitMaskedTextBox.Text))
+            else if (upperLimitMaskedTextBox.Text != String.Empty)
             {
+                if (Convert.ToInt32(upperLimitMaskedTextBox.Text) < Convert.ToInt32(lowerLimitMaskedTextBox.Text))
+                {
+                    max = min + 1;
+                    upperLimitMaskedTextBox.Text = max.ToString();
+                }
+            }
+        }
+
+        private void upperLimitMaskedTextBox_Leave(object sender, EventArgs e)
+        {
+            if (upperLimitMaskedTextBox.Text == String.Empty)
+            {
+                if (lowerLimitMaskedTextBox.Text == String.Empty)
+                {
+                    min = 0;
+                    lowerLimitMaskedTextBox.Text = min.ToString();
+                }
                 max = min + 1;
+                upperLimitMaskedTextBox.Text = max.ToString();
+            }
+            else if (lowerLimitMaskedTextBox.Text != String.Empty)
+            {
+                if (Convert.ToInt32(upperLimitMaskedTextBox.Text) < Convert.ToInt32(lowerLimitMaskedTextBox.Text))
+                {
+                    max = min + 1;
+                    upperLimitMaskedTextBox.Text = max.ToString();
+                }
             }
         }
     }
