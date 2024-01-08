@@ -101,17 +101,45 @@ namespace RandomNumberGenerator
 
         private void amountMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
-            amount = Convert.ToInt32(amountMaskedTextBox.Text);
+            if (amountMaskedTextBox.Text != String.Empty)
+            {
+                amount = Convert.ToInt32(amountMaskedTextBox.Text);
+            }
+            failSafe();
         }
 
         private void lowerLimitMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
-            min = Convert.ToInt32(lowerLimitMaskedTextBox.Text);
+            if (lowerLimitMaskedTextBox.Text != String.Empty)
+            {
+                min = Convert.ToInt32(lowerLimitMaskedTextBox.Text);
+            }
+            failSafe();
         }
 
         private void upperLimitMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
-            max = Math.Max(min + 1, Convert.ToInt32(upperLimitMaskedTextBox.Text));
+            if (upperLimitMaskedTextBox.Text != String.Empty)
+            {
+                max = Math.Max(min + 1, Convert.ToInt32(upperLimitMaskedTextBox.Text));
+            }
+            failSafe();
+        }
+
+        private void failSafe()
+        {
+            if (amountMaskedTextBox.Text == String.Empty || Convert.ToInt32(amountMaskedTextBox.Text) < 1)
+            {
+                amount = 1;
+            }
+            if (lowerLimitMaskedTextBox.Text == String.Empty)
+            {
+                min = 0;
+            }
+            if (upperLimitMaskedTextBox.Text == String.Empty || Convert.ToInt32(upperLimitMaskedTextBox.Text) < Convert.ToInt32(lowerLimitMaskedTextBox.Text))
+            {
+                max = min + 1;
+            }
         }
     }
 }
