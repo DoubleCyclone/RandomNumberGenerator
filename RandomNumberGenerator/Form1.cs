@@ -55,7 +55,7 @@ namespace RandomNumberGenerator
         {
             InitializeComponent();
 
-            this.MinimumSize = new Size(285, 206);
+            this.MinimumSize = new Size(330, 240);
 
             FormClosing += (s, e) => { UnregisterHotKey(Handle, HOTKEY_ID); };
             RegisterHotKey(Handle, HOTKEY_ID, MOD_CONTROL, (int)Keys.D1);
@@ -89,7 +89,7 @@ namespace RandomNumberGenerator
             response.EnsureSuccessStatusCode();
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
-            MessageBox.Show($"{jsonResponse}\n");
+            MessageBox.Show($"{jsonResponse}\n","Generated Numbers",MessageBoxButtons.OK);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -142,21 +142,6 @@ namespace RandomNumberGenerator
             {
                 max = min + 1;
             }
-        }
-
-        private void amountMaskedTextBox_Click(object sender, EventArgs e)
-        {
-            amountMaskedTextBox.Text.Trim();
-        }
-
-        private void lowerLimitMaskedTextBox_Click(object sender, EventArgs e)
-        {
-            lowerLimitMaskedTextBox.Text.Trim();
-        }
-
-        private void upperLimitMaskedTextBox_Click(object sender, EventArgs e)
-        {
-            upperLimitMaskedTextBox.Text.Trim();
         }
     }
 }
