@@ -29,108 +29,163 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            amountMaskedTextBox = new MaskedTextBox();
+            panel1 = new Panel();
             label1 = new Label();
+            amountMaskedTextBox = new MaskedTextBox();
+            panel2 = new Panel();
+            upperLimitMaskedTextBox = new MaskedTextBox();
+            label3 = new Label();
             label2 = new Label();
             lowerLimitMaskedTextBox = new MaskedTextBox();
-            label3 = new Label();
-            upperLimitMaskedTextBox = new MaskedTextBox();
-            button2 = new Button();
-            hotkey1Label = new Label();
+            panel3 = new Panel();
             hotkey2Label = new Label();
+            hotkey1Label = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // panel1
             // 
-            button1.FlatAppearance.BorderColor = SystemColors.Control;
-            button1.FlatAppearance.MouseDownBackColor = Color.Gray;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.Control;
-            button1.Image = RandomNumberGeneratorResources.Dice;
-            button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(12, 95);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 35);
-            button1.TabIndex = 0;
-            button1.Text = "Roll One";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // amountMaskedTextBox
-            // 
-            amountMaskedTextBox.BackColor = SystemColors.ActiveCaptionText;
-            amountMaskedTextBox.ForeColor = SystemColors.Control;
-            amountMaskedTextBox.Location = new Point(201, 12);
-            amountMaskedTextBox.Mask = "00000";
-            amountMaskedTextBox.Name = "amountMaskedTextBox";
-            amountMaskedTextBox.Size = new Size(33, 23);
-            amountMaskedTextBox.TabIndex = 2;
-            amountMaskedTextBox.Text = "2";
-            amountMaskedTextBox.ValidatingType = typeof(int);
-            amountMaskedTextBox.TextChanged += amountMaskedTextBox_TextChanged;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(amountMaskedTextBox);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(269, 45);
+            panel1.TabIndex = 12;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(12, 15);
+            label1.Location = new Point(3, 17);
             label1.Name = "label1";
             label1.Size = new Size(183, 15);
-            label1.TabIndex = 3;
+            label1.TabIndex = 5;
             label1.Text = "How many numbers to generate?";
+            // 
+            // amountMaskedTextBox
+            // 
+            amountMaskedTextBox.Anchor = AnchorStyles.Right;
+            amountMaskedTextBox.BackColor = SystemColors.ActiveCaptionText;
+            amountMaskedTextBox.ForeColor = SystemColors.Control;
+            amountMaskedTextBox.HidePromptOnLeave = true;
+            amountMaskedTextBox.Location = new Point(229, 14);
+            amountMaskedTextBox.Mask = "00000";
+            amountMaskedTextBox.Name = "amountMaskedTextBox";
+            amountMaskedTextBox.PromptChar = ' ';
+            amountMaskedTextBox.Size = new Size(33, 23);
+            amountMaskedTextBox.TabIndex = 4;
+            amountMaskedTextBox.Text = "2";
+            amountMaskedTextBox.ValidatingType = typeof(int);
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(upperLimitMaskedTextBox);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(lowerLimitMaskedTextBox);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 45);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(269, 49);
+            panel2.TabIndex = 6;
+            // 
+            // upperLimitMaskedTextBox
+            // 
+            upperLimitMaskedTextBox.Anchor = AnchorStyles.Right;
+            upperLimitMaskedTextBox.BackColor = SystemColors.ActiveCaptionText;
+            upperLimitMaskedTextBox.ForeColor = SystemColors.Control;
+            upperLimitMaskedTextBox.HidePromptOnLeave = true;
+            upperLimitMaskedTextBox.Location = new Point(209, 9);
+            upperLimitMaskedTextBox.Mask = "000000000";
+            upperLimitMaskedTextBox.Name = "upperLimitMaskedTextBox";
+            upperLimitMaskedTextBox.PromptChar = ' ';
+            upperLimitMaskedTextBox.Size = new Size(53, 23);
+            upperLimitMaskedTextBox.TabIndex = 12;
+            upperLimitMaskedTextBox.Text = "100";
+            upperLimitMaskedTextBox.ValidatingType = typeof(int);
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(159, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(27, 15);
+            label3.TabIndex = 11;
+            label3.Text = "and";
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(12, 50);
+            label2.Location = new Point(7, 12);
             label2.Name = "label2";
             label2.Size = new Size(52, 15);
-            label2.TabIndex = 5;
+            label2.TabIndex = 10;
             label2.Text = "Between";
             // 
             // lowerLimitMaskedTextBox
             // 
+            lowerLimitMaskedTextBox.Anchor = AnchorStyles.Right;
             lowerLimitMaskedTextBox.BackColor = SystemColors.ActiveCaptionText;
             lowerLimitMaskedTextBox.ForeColor = SystemColors.Control;
-            lowerLimitMaskedTextBox.Location = new Point(79, 47);
+            lowerLimitMaskedTextBox.HidePromptOnLeave = true;
+            lowerLimitMaskedTextBox.Location = new Point(89, 9);
             lowerLimitMaskedTextBox.Mask = "000000000";
             lowerLimitMaskedTextBox.Name = "lowerLimitMaskedTextBox";
+            lowerLimitMaskedTextBox.PromptChar = ' ';
             lowerLimitMaskedTextBox.Size = new Size(53, 23);
-            lowerLimitMaskedTextBox.TabIndex = 4;
+            lowerLimitMaskedTextBox.TabIndex = 9;
             lowerLimitMaskedTextBox.Text = "1";
             lowerLimitMaskedTextBox.ValidatingType = typeof(int);
-            lowerLimitMaskedTextBox.TextChanged += lowerLimitMaskedTextBox_TextChanged;
             // 
-            // label3
+            // panel3
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(143, 50);
-            label3.Name = "label3";
-            label3.Size = new Size(27, 15);
-            label3.TabIndex = 7;
-            label3.Text = "and";
+            panel3.Controls.Add(hotkey2Label);
+            panel3.Controls.Add(hotkey1Label);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button1);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 94);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(269, 74);
+            panel3.TabIndex = 13;
             // 
-            // upperLimitMaskedTextBox
+            // hotkey2Label
             // 
-            upperLimitMaskedTextBox.BackColor = SystemColors.ActiveCaptionText;
-            upperLimitMaskedTextBox.ForeColor = SystemColors.Control;
-            upperLimitMaskedTextBox.Location = new Point(181, 47);
-            upperLimitMaskedTextBox.Mask = "000000000";
-            upperLimitMaskedTextBox.Name = "upperLimitMaskedTextBox";
-            upperLimitMaskedTextBox.Size = new Size(53, 23);
-            upperLimitMaskedTextBox.TabIndex = 8;
-            upperLimitMaskedTextBox.Text = "100";
-            upperLimitMaskedTextBox.ValidatingType = typeof(int);
-            upperLimitMaskedTextBox.TextChanged += upperLimitMaskedTextBox_TextChanged;
+            hotkey2Label.Anchor = AnchorStyles.Right;
+            hotkey2Label.AutoSize = true;
+            hotkey2Label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            hotkey2Label.ForeColor = SystemColors.Control;
+            hotkey2Label.Location = new Point(206, 8);
+            hotkey2Label.Name = "hotkey2Label";
+            hotkey2Label.Size = new Size(56, 15);
+            hotkey2Label.TabIndex = 15;
+            hotkey2Label.Text = "CTRL + 2";
+            // 
+            // hotkey1Label
+            // 
+            hotkey1Label.Anchor = AnchorStyles.Left;
+            hotkey1Label.AutoSize = true;
+            hotkey1Label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            hotkey1Label.ForeColor = SystemColors.Control;
+            hotkey1Label.Location = new Point(7, 8);
+            hotkey1Label.Name = "hotkey1Label";
+            hotkey1Label.Size = new Size(56, 15);
+            hotkey1Label.TabIndex = 14;
+            hotkey1Label.Text = "CTRL + 1";
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.FlatAppearance.BorderColor = SystemColors.Control;
             button2.FlatAppearance.MouseDownBackColor = Color.Gray;
             button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
@@ -139,73 +194,69 @@
             button2.ForeColor = SystemColors.Control;
             button2.Image = RandomNumberGeneratorResources.Dice;
             button2.ImageAlign = ContentAlignment.MiddleRight;
-            button2.Location = new Point(127, 95);
+            button2.Location = new Point(155, 25);
             button2.Name = "button2";
             button2.Size = new Size(107, 35);
-            button2.TabIndex = 9;
+            button2.TabIndex = 13;
             button2.Text = "Roll Many";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
-            // hotkey1Label
+            // button1
             // 
-            hotkey1Label.AutoSize = true;
-            hotkey1Label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            hotkey1Label.ForeColor = SystemColors.Control;
-            hotkey1Label.Location = new Point(12, 77);
-            hotkey1Label.Name = "hotkey1Label";
-            hotkey1Label.Size = new Size(56, 15);
-            hotkey1Label.TabIndex = 10;
-            hotkey1Label.Text = "CTRL + 1";
-            // 
-            // hotkey2Label
-            // 
-            hotkey2Label.AutoSize = true;
-            hotkey2Label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            hotkey2Label.ForeColor = SystemColors.Control;
-            hotkey2Label.Location = new Point(178, 77);
-            hotkey2Label.Name = "hotkey2Label";
-            hotkey2Label.Size = new Size(56, 15);
-            hotkey2Label.TabIndex = 11;
-            hotkey2Label.Text = "CTRL + 2";
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.FlatAppearance.BorderColor = SystemColors.Control;
+            button1.FlatAppearance.MouseDownBackColor = Color.Gray;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.Control;
+            button1.Image = RandomNumberGeneratorResources.Dice;
+            button1.ImageAlign = ContentAlignment.MiddleRight;
+            button1.Location = new Point(7, 25);
+            button1.Name = "button1";
+            button1.Size = new Size(107, 35);
+            button1.TabIndex = 12;
+            button1.Text = "Roll One";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(244, 137);
-            Controls.Add(hotkey2Label);
-            Controls.Add(hotkey1Label);
-            Controls.Add(button2);
-            Controls.Add(upperLimitMaskedTextBox);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(lowerLimitMaskedTextBox);
-            Controls.Add(label1);
-            Controls.Add(amountMaskedTextBox);
-            Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            ClientSize = new Size(269, 167);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RandomNumberGenerator by 8BitHero";
             Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private MaskedTextBox amountMaskedTextBox;
+        private Panel panel1;
         private Label label1;
+        private MaskedTextBox amountMaskedTextBox;
+        private Panel panel2;
+        private MaskedTextBox upperLimitMaskedTextBox;
+        private Label label3;
         private Label label2;
         private MaskedTextBox lowerLimitMaskedTextBox;
-        private Label label3;
-        private MaskedTextBox upperLimitMaskedTextBox;
-        private Button button2;
-        private Label hotkey1Label;
+        private Panel panel3;
         private Label hotkey2Label;
+        private Label hotkey1Label;
+        private Button button2;
+        private Button button1;
     }
 }

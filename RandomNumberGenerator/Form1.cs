@@ -55,6 +55,8 @@ namespace RandomNumberGenerator
         {
             InitializeComponent();
 
+            this.MinimumSize = new Size(285, 206);
+
             FormClosing += (s, e) => { UnregisterHotKey(Handle, HOTKEY_ID); };
             RegisterHotKey(Handle, HOTKEY_ID, MOD_CONTROL, (int)Keys.D1);
             RegisterHotKey(Handle, HOTKEY2_ID, MOD_CONTROL, (int)Keys.D2);
@@ -140,6 +142,21 @@ namespace RandomNumberGenerator
             {
                 max = min + 1;
             }
+        }
+
+        private void amountMaskedTextBox_Click(object sender, EventArgs e)
+        {
+            amountMaskedTextBox.Text.Trim();
+        }
+
+        private void lowerLimitMaskedTextBox_Click(object sender, EventArgs e)
+        {
+            lowerLimitMaskedTextBox.Text.Trim();
+        }
+
+        private void upperLimitMaskedTextBox_Click(object sender, EventArgs e)
+        {
+            upperLimitMaskedTextBox.Text.Trim();
         }
     }
 }
