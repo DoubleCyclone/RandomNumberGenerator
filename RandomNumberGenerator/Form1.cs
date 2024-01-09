@@ -1,5 +1,6 @@
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace RandomNumberGenerator
 {
@@ -170,6 +171,21 @@ namespace RandomNumberGenerator
                     upperLimitMaskedTextBox.Text = max.ToString();
                 }
             }
+        }
+
+        private void amountMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            amountMaskedTextBox.SelectionStart = amountMaskedTextBox.MaskedTextProvider.LastAssignedPosition + 1;
+        }
+
+        private void lowerLimitMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lowerLimitMaskedTextBox.SelectionStart = lowerLimitMaskedTextBox.MaskedTextProvider.LastAssignedPosition + 1;
+        }
+
+        private void upperLimitMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            upperLimitMaskedTextBox.SelectionStart = upperLimitMaskedTextBox.MaskedTextProvider.LastAssignedPosition + 1;
         }
     }
 }
