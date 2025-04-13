@@ -1,3 +1,4 @@
+using System.Net;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -46,6 +47,9 @@ namespace RandomNumberGenerator
         /* AMOUNT, MIN and MAX variables */
         int amount, min, max;
 
+        /* FALLBACK RANDOM */
+        private static readonly Random fallbackRandom = new Random();
+
         /* URI ADDRESS */
         private static HttpClient sharedClient = new()
         {
@@ -65,12 +69,28 @@ namespace RandomNumberGenerator
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            await GetAsync(sharedClient, 1, min, max);
+            try
+            {
+                await GetAsync(sharedClient, 1, min, max);
+            }
+            catch
+            {
+                await GetRandomNumberAsync(1, min, max);
+            }
+
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            await GetAsync(sharedClient, amount, min, max);
+            try
+            {
+                await GetAsync(sharedClient, amount, min, max);
+            }
+            catch
+            {
+                await GetRandomNumberAsync(amount, min, max);
+            }
+
         }
 
         static async Task GetAsync(HttpClient httpClient, int amount, int min, int max)
@@ -91,6 +111,17 @@ namespace RandomNumberGenerator
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
             MessageBox.Show($"{jsonResponse}\n", "Generated Numbers", MessageBoxButtons.OK);
+        }
+
+        static async Task GetRandomNumberAsync(int count, int min, int max)
+        {
+            await Task.Delay(100);
+            int[] numbers = new int[count];
+            for (int i = 0; i < count; i++)
+            {
+                numbers[i] = fallbackRandom.Next(min, max + 1);
+            }
+            MessageBox.Show($"{numbers}\n", "Generated Numbers (Fallback)", MessageBoxButtons.OK);
         }
 
         private void Form1_Load(object sender, EventArgs e)
