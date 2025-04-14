@@ -23,4 +23,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <PropertyGroup>
+    <ApplicationIcon>Resources\appicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\appicon.ico" />
+  </ItemGroup>
 </Project>

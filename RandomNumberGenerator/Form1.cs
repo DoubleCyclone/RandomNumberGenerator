@@ -1,6 +1,9 @@
 using System.Net;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Windows.Forms;
 
 namespace RandomNumberGenerator
@@ -59,6 +62,7 @@ namespace RandomNumberGenerator
         public Form1()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             this.MinimumSize = new Size(330, 240);
 
@@ -121,7 +125,14 @@ namespace RandomNumberGenerator
             {
                 numbers[i] = fallbackRandom.Next(min, max + 1);
             }
-            MessageBox.Show($"{numbers}\n", "Generated Numbers (Fallback)", MessageBoxButtons.OK);
+            var jsonArray = JsonSerializer.Serialize(numbers);
+            // strip the brackets and commas
+            using JsonDocument doc = JsonDocument.Parse(jsonArray);
+            var elements = doc.RootElement.EnumerateArray()
+                   .Select(e => e.ToString());
+            string cleanOutput = string.Join(" ", elements);
+
+            MessageBox.Show($"{cleanOutput}\n", "Generated Numbers (Fallback)", MessageBoxButtons.OK);
         }
 
         private void Form1_Load(object sender, EventArgs e)
